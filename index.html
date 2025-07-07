@@ -5,7 +5,55 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
+  <!-- CSS styles for the footer elements -->
+  <style>
+    body {
+      margin: 0; /* Remove default body margin */
+      font-family: sans-serif;
+    }
+
+    .footer-container {
+      position: absolute; /* Position relative to the page */
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box; /* Ensures padding is included in the width */
+      
+      /* Layout and Alignment */
+      display: flex;
+      justify-content: center; /* Center items horizontally */
+      align-items: center;    /* Center items vertically */
+      
+      /* Appearance */
+      padding: 20px;
+      background-color: rgba(240, 240, 240, 0.85); /* Semi-transparent background */
+      gap: 15px; /* Adds space between the text and the button */
+    }
+
+    .footer-container span {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .footer-container a {
+      display: block; /* Helps with layout and sizing */
+    }
+
+    .footer-container img {
+      height: 60px; /* This sets the height, width will be 90px if the image has a 6:9 ratio */
+      width: auto;  /* Width adjusts automatically to maintain aspect ratio */
+      display: block; /* Removes extra space below the image */
+      cursor: pointer;
+      transition: transform 0.2s ease; /* Smooth transition for hover effect */
+    }
+
+    .footer-container img:hover {
+      transform: scale(1.05); /* Slightly enlarges the button on hover */
+    }
+  </style>
 </head>
+
 <body>
   <model-viewer
     src="https://raw.githubusercontent.com/agtheochem/serotonine/main/xxx.glb"
@@ -21,5 +69,19 @@
           Activate AR
       </button>
   </model-viewer>
+
+  <!-- Container for the text and button at the bottom -->
+  <div class="footer-container">
+    <span>Uni Oldenburg | AG Theoretische Chemie | Hier klicken um mehr zu erfahren!</span>
+    <!-- 
+      This is the button.
+      IMPORTANT:  href="#" contains the URL you want to link to
+      The image source 'button.png' assumes the image is in the same folder as this HTML file.
+    -->
+    <a href="https://uol.de/tc-kluener">
+      <img src="button.png" alt="Learn More Button">
+    </a>
+  </div>
+
 </body>
 </html>
